@@ -5,7 +5,10 @@ dist/
 # Modulos locales
 node_modules/
 
-# Error de packet manager
+# Error del package manager
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Variables de ambiente
+.env
