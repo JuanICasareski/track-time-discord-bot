@@ -1,0 +1,11 @@
+
+# Carpeta para prod
+dist/
+
+# Modulos locales
+node_modules/
+
+# Error de packet manager
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

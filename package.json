@@ -1,0 +1,16 @@
+{
+  "name": "track-hours-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "dev": "npx ts-node ./src/index.ts",
+    "prod": "tsc && node dist/index.js"
+  },
+  "keywords": [],
+  "author": "Juan I. Casareski",
+  "license": "ISC",
+  "devDependencies": {
+    "ts-node": "^10.9.1"
+  }
+}
