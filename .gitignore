@@ -12,3 +12,7 @@ yarn-error.log*
 
 # Variables de ambiente
 .env
+
+
+
+user_state.json
