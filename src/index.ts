@@ -28,7 +28,7 @@ client.on('interactionCreate', async (interaction) => {
       const states = await get_users_state(interaction.guildId)
 
       const description = states.map((user, i) => {
-        return `#${i+1} [${user.nickname}] ${user.formatted_total_time}`
+        return `**__#${i+1}__ [${user.nickname}]** ${user.formatted_total_time}`
       })
 
       leader_board.setDescription("No hay leaderboard");  
