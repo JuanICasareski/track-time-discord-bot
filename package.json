@@ -14,7 +14,9 @@
     "ts-node": "^10.9.1"
   },
   "dependencies": {
+    "@discordjs/builders": "^1.6.5",
     "@types/node": "^20.8.0",
+    "dayjs": "^1.11.10",
     "discord.js": "^14.13.0",
     "dotenv": "^16.3.1"
   }

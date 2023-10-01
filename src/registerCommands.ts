@@ -8,8 +8,12 @@ const CLIENT_ID = process.env.CLIENT_ID || '';
 const commands = [
 	{
 		name: "ping",
-		description: "Replies with Pong!",
+		description: "Contesta Pong!",
 	},
+	{
+		name: "tabla_horas",
+		description: "Muestra el ranking de uso del discord para este servidor"
+	}
 ];
 
 const rest = new REST({ version: "10" }).setToken(TOKEN);
