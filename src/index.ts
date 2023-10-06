@@ -2,6 +2,7 @@ import dotenv from 'dotenv';
 import { client } from './utils/discord';
 import { write_user_state, get_users_state } from './utils/files';
 import { EmbedBuilder } from '@discordjs/builders';
+import { commands } from './utils/constants';
 
 dotenv.config();
 const TOKEN = process.env.DISCORD_TOKEN;
@@ -14,11 +15,11 @@ client.on('ready', async (client) => {
 client.on('interactionCreate', async (interaction) => {
   if (!interaction.isChatInputCommand()) return;
 
-  if (interaction.commandName === 'ping') {
+  if (interaction.commandName === commands.PING) {
     await interaction.reply('Pong!');
   }
 
-  else if (interaction.commandName === 'tabla_horas') {
+  else if (interaction.commandName === commands.LEADERBOARD) {
     if (interaction.guildId) {
       await interaction.deferReply();
       
@@ -27,9 +28,9 @@ client.on('interactionCreate', async (interaction) => {
       
       const states = await get_users_state(interaction.guildId)
 
-      const description = states.map((user, i) => {
-        return `**__#${i+1}__ [${user.nickname}]** ${user.formatted_total_time}`
-      })
+      const description = states.map((user, i) => (
+        `**__#${i+1}__ [${user.nickname}]** ${user.formatted_total_time}`
+      ))
 
       leader_board.setDescription("No hay leaderboard");  
       if (description.length) {
