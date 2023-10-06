@@ -42,14 +42,14 @@ client.on('interactionCreate', async (interaction) => {
   }
 });
 
-client.on('voiceStateUpdate', (old_state, new_state) => {
+client.on('voiceStateUpdate', async (old_state, new_state) => {
   if (old_state.channel && !new_state.channel ) {
     console.log(`[-] ${new_state.member?.user?.displayName}`);
 
     if (new_state.member?.user.id) {
-      write_user_state(
+      await write_user_state(
         new_state.guild.id,
-        new_state.member?.user.id,
+        new_state.member.user.id,
         'disconnected'
       );
     }
@@ -58,9 +58,9 @@ client.on('voiceStateUpdate', (old_state, new_state) => {
     console.log(`[+] ${new_state.member?.user?.displayName}`);
 
     if (new_state.member?.user.id) {
-      write_user_state(
+      await write_user_state(
         new_state.guild.id,
-        new_state.member?.user.id,
+        new_state.member.user.id,
         'connected'
       );
     }

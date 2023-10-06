@@ -8,17 +8,8 @@ type UserState = {
     total_time: number;
 };
 
-type UserLogFile = {
-    [guild_id: string]: {
-        users_state: {
-            [member_id: string]: UserState | undefined;
-        };
-    } | undefined;
-};
-
 
 export {
     UserActions,
-    UserState,
-    UserLogFile
+    UserState
 };
